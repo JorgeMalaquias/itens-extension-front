@@ -1,16 +1,19 @@
 import { useState } from "react";
 import FormNewItem from "../formNewItem";
-import OpenFormButton from "../openFormButton";
-
+import { useNavigate } from "react-router-dom";
+import Style from "./style";
 
 function Main(){
-    const [selected,setSelected] = useState(true);
+    const [selected,setSelected] = useState(false);
+    const navigate = useNavigate();
     return(
-        <>
-            {(selected)? <FormNewItem/>:<OpenFormButton/>}
-            
+        <Style.Container>
+            <Style.NewItem>
+                <button onClick={()=>setSelected(!selected)}>+ Novo Item</button>
+                {(selected)? <FormNewItem/>:<></>}
+            </Style.NewItem>
             <div>Itens</div>
-        </>
+        </Style.Container>
     );
 }
 
