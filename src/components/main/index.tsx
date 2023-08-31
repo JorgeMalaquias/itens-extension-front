@@ -1,11 +1,13 @@
 import { useState } from "react";
 import FormNewItem from "../formNewItem";
-import { useNavigate } from "react-router-dom";
+import Item from "../item";
+//import { useNavigate } from "react-router-dom";
 import Style from "./style";
 
 function Main(){
     const [selected,setSelected] = useState(false);
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
+    const[items,setItems]=useState([1,2,3,4,5,6]);
     return(
         <Style.Container>
             <Style.NewItem>
@@ -13,6 +15,9 @@ function Main(){
                 {(selected)? <FormNewItem/>:<></>}
             </Style.NewItem>
             <div>Itens</div>
+            {
+                items.map((e)=> {return <Item n={e}/>})
+            }
         </Style.Container>
     );
 }
