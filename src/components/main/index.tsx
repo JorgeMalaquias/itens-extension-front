@@ -1,13 +1,28 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import FormNewItem from "../formNewItem";
-import Item from "../item";
+import Item, { ItemProps } from "../item";
 //import { useNavigate } from "react-router-dom";
 import Style from "./style";
 
 function Main(){
     const [selected,setSelected] = useState(false);
     //const navigate = useNavigate();
-    const[items,setItems]=useState([1,2,3,4,5,6]);
+    const[items,setItems]=useState([]);
+    const token = 'something';
+
+    useEffect(()=>{
+        const config = {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        }
+        axios.get(`${import.meta.env.VITE_BASE_URL}/items`, config).then((r) => {
+            setItems(r.data);
+        }).catch((r) => {
+            alert(r.response.data);
+        })
+    },[]);
     return(
         <Style.Container>
             <Style.NewItem>
@@ -16,7 +31,7 @@ function Main(){
             </Style.NewItem>
             <div>Itens</div>
             {
-                items.map((e)=> {return <Item n={e}/>})
+                items.map((e:ItemProps)=> {return <Item key={e.id} name={e.name} description={e.description}/>})
             }
         </Style.Container>
     );

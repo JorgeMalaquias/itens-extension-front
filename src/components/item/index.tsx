@@ -1,15 +1,17 @@
 import { useState } from "react";
 import Style from "./style";
 
-interface Props {
-    n: number;
+export interface ItemProps {
+    id?: number;
+    name: string;
+    description: string;
 }
-function Item(props:Props){
+function Item(props:ItemProps){
     const [selected,setSelected] = useState(false);
     return(
         <Style.Container>
-            <button onClick={()=>setSelected(!selected)}>{props.n}</button>
-            {(selected)? <p>Some text</p> :<></>}
+            <button onClick={()=>setSelected(!selected)}>{props.name}</button>
+            {(selected)? <p>{props.description}</p> :<></>}
         </Style.Container>
     );
 }
