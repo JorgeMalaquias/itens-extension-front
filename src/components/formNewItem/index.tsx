@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useAppDispatch } from "../../redux/hooks";
+import { reload } from "../../redux/item/slice";
 import Style from "./style";
 
 
@@ -8,6 +10,7 @@ function FormNewItem(){
     const [description,setDescription]=useState("");
     const [disabled,setDisabled] = useState(true);
     const token = 'something';
+    const dispatch = useAppDispatch();
     function create(e:React.FormEvent<HTMLFormElement>){
         e.preventDefault();
         setDisabled(true);
@@ -20,6 +23,7 @@ function FormNewItem(){
             alert("Item criado com sucesso!");
             setName("");
             setDescription("");
+            dispatch(reload());
         }).catch((r) => {
             setDisabled(false);
             alert(r.response.data);
