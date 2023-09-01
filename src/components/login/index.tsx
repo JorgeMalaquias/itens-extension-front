@@ -3,9 +3,6 @@ import axios from 'axios';
 import { Link, useNavigate, } from 'react-router-dom';
 import Style from './style';
 
-
-
-
 function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -41,6 +38,7 @@ function LoginForm() {
 
     return (
         <Style.Form onSubmit={login}>
+            <div>Faça seu login inserindo os dados:</div>
             <input value={email} type="text" placeholder="Email" required onChange={(e) => setEmail(e.target.value)} />
             <input value={password} type="password" placeholder="Senha" required onChange={(e) => setPassword(e.target.value)} />
             <button type="submit">Logar</button>
@@ -48,13 +46,15 @@ function LoginForm() {
     );
 }
 
-export default function Login() {
+function Login() {
     return (
         <Style.Container>
-            <div>Items Extension</div>
+            <h1>Items Extension</h1>
             <LoginForm />
             <Link to={"/register"}>Não possui cadastro? Cadastre-se aqui!</Link>
         </Style.Container>
 
     );
 }
+
+export default Login;

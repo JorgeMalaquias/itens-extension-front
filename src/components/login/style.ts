@@ -1,40 +1,45 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+    width: 70%;
+    height: 70%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    > h1{
+        color: #0000CD;
+        font-size: 36px;
+    }
+    > a {
+        color: black;
+    }
 `
 const Form = styled.form`
-    width: 100%;
-    height: 240px;
+    width: 60%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     background-color: #0000CD;
     color: white;
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 0px 16px 16px 16px;
-    > input, textarea, label{
-        width:100%;
+    border-radius: 16px;
+    padding: 16px;
+    > div{
+        text-align: center;
+        font-size: 16px;
     }
     > input{
-        height: 30px;
-    }
-    > textarea{
-        height: 80px;
+        width:100%;
+        height: 36px;
     }
     > button {
         height: 30px;
         width: 70px;
         margin-top: 4px;
-    }
-    > label{
-        height: 20px;
-        font-size: 12px;
-        margin-top: 16px;
     }
 `
 const Style = {

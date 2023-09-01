@@ -7,20 +7,27 @@ const Container = styled.div`
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
+    border-radius: 16px;
+    overflow: hidden;
     > *{
         width: 100%;
+        height: 100%;
         color: white;
         font-family: 'Roboto', sans-serif;
     }
     > button{
-        font-size: 16px;
+        height: 50px;
+        font-size: 20px;
         background-color: #000080;
-        height: 30px;
+        text-align: left;
+        padding: 0 0 0 20px;
     }
     > p{
-        font-size: 10px;
-        background-color: #0000CD;
-        height: 40px;
+        height: 60px;
+        font-size: 16px;
+        background-color: white;
+        color: black;
+        padding: 20px 0 0 20px;
     }
 `
 

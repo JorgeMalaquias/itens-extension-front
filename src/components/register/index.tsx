@@ -9,6 +9,7 @@ function RegisterForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+
     function register(e:React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         if(password.length<6){
@@ -35,8 +36,10 @@ function RegisterForm() {
             alert(message);
         })
     }
+    
     return (
         <Style.Form onSubmit={register}>
+            <div>Faça seu cadastro inserindo os dados:</div>
             <input value={email} type="text" placeholder="Email" required onChange={(e) => setEmail(e.target.value)} />
             <input value={password} type="password" placeholder="Senha" required onChange={(e) => setPassword(e.target.value)} />
             <button type="submit">Cadastrar</button>
@@ -45,12 +48,14 @@ function RegisterForm() {
 }
     
 
-export default function Register() {
+function Register() {
     return (
         <Style.Container>
-            <div>Items Extension</div>
+            <h1>Items Extension</h1>
             <RegisterForm />
             <Link to={"/login"}>Já está cadastrado? Entre agora!</Link>
         </Style.Container>
     );
 }
+
+export default Register;

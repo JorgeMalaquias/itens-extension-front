@@ -43,6 +43,7 @@ function FormNewItem({setSelected}:Props){
     useEffect(()=>{
         setDisabled((name === "" || description === ""));
     },[name,description]);
+    
     return(
         <Style.Container>
             <Style.Form onSubmit={(e)=>create(e)}>

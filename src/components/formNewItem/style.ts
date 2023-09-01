@@ -15,22 +15,22 @@ const Container = styled.div`
     font-family: 'Roboto', sans-serif;
 `
 const Form = styled.form`
-    width: 60%;
-    height: 240px;
-    background-color: #0000CD;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+    width: 70%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
+    background-color: #0000CD;
+    color: white;
+    font-family: 'Roboto', sans-serif;
     padding: 0px 16px 16px 16px;
     border-radius: 16px;
     > input, textarea, label{
         width:100%;
     }
     > input{
-        height: 30px;
+        height: 36px;
     }
     > textarea{
         height: 80px;
@@ -43,7 +43,7 @@ const Form = styled.form`
     }
     > label{
         height: 20px;
-        font-size: 12px;
+        font-size: 16px;
         margin-top: 16px;
     }
 `

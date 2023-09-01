@@ -57,8 +57,8 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
     }
     html{
-        min-height: 1000px;
-        min-width: 1000px;
+        min-height: 600px;
+        min-width: 800px;
     }
     body{
         position:absolute;
@@ -70,10 +70,6 @@ const GlobalStyle = createGlobalStyle`
         width: 100vw;
         min-height: 100px;
         min-width: 100px;
-    }
-    #root{
-        width: 100%;
-        height: 100%;
     }
     a{
         text-decoration: none;
@@ -88,6 +84,14 @@ const GlobalStyle = createGlobalStyle`
     }
     textarea{
         resize: none;
+    }
+    #root{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: scroll;
     }
 `
 
