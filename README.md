@@ -1,11 +1,7 @@
 # Aplicação
 
-Consiste em uma extensão na qual, estando logado, o usuário pode adicionar e visualizar itens.
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Tecnologias empregadas:
+Consiste em uma extensão na qual, estando logado, o usuário pode adicionar e visualizar itens.  
+## Tecnologias empregadas
 
 - Vite: O front end foi desenvolvido em vite devido a maior velocidade de em compilação de código, e maior praticidade para usar variáveis de ambiente.
 
@@ -19,7 +15,7 @@ Consiste em uma extensão na qual, estando logado, o usuário pode adicionar e v
 
 - As demais tecnologias (React.js, Typescript) eram requisitos mandatórios.
 
-## Rodando a aplicação:
+## Rodando a aplicação
 
 1. será necessário rodar a API deste projeto em sua máquina e/ou ter acesso há um servidor no qual ele esteja no ar. Você pode conseguir baixar o repositório deste projeto em: https://github.com/JorgeMalaquias/itens-extension-back. Neste link você encontrará instruções de como rodar a API.
 2. baixe este repositório;
