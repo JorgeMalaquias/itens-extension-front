@@ -6,26 +6,40 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
     position: relative;
+    font-family: 'Roboto', sans-serif;
+    padding: 16px;
+    > *{
+        width:80%;
+    }
+    > h1{
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 40px;
+        color: #00008B;
+    }
+    > h2{
+        font-size: 20px;
+        color: #00008B;
+    }
 `
 const NewItem = styled.div`
-    position: absolute;
-    top: 40px;
-    width: 80%;
-    height: fit-content;
+    height: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     color: white;
     font-family: 'Roboto', sans-serif;
     > button {
         background-color: #00008B;
-        width: 100%;
-        height: 40px;
-        text-align: left;
+        width: auto;
+        height: 100%;
+        text-align: center;
         color: white;
+        border-radius: 16px;
+        font-size: 16px;
     }
 `
 

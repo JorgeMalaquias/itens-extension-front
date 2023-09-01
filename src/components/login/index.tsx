@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { Link, useNavigate, } from 'react-router-dom';
 import axios from 'axios';
+import { Link, useNavigate, } from 'react-router-dom';
 import Style from './style';
 
 
 
-function RegisterForm() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+
+function LoginForm() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    function register(e:React.FormEvent<HTMLFormElement>) {
+
+    function login(e:React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         if(password.length<6){
             alert("A senha precisa ter ao menos 6 dígitos");
@@ -19,11 +21,12 @@ function RegisterForm() {
             email,
             password
         }
-        axios.post(`${import.meta.env.VITE_BASE_URL}/users`, body).then(() => {
-            alert("Cadastro feito com sucesso. Para acessar sua conta faça o login");
+        axios.post(`${import.meta.env.VITE_BASE_URL}/users/auth`, body).then((response) => {
+            window.localStorage.setItem("token", response.data);
+            alert("Login feito com sucesso!");
             setEmail("");
             setPassword("");
-            navigate("/login");
+            navigate("/");
         }).catch((r) => {
             let message:string = "";
             if(r.message==="Network Error"){
@@ -33,24 +36,25 @@ function RegisterForm() {
                 message+=r.response.data + "\n" + r.message;
             }
             alert(message);
-        })
+        });
     }
+
     return (
-        <Style.Form onSubmit={register}>
+        <Style.Form onSubmit={login}>
             <input value={email} type="text" placeholder="Email" required onChange={(e) => setEmail(e.target.value)} />
             <input value={password} type="password" placeholder="Senha" required onChange={(e) => setPassword(e.target.value)} />
-            <button type="submit">Cadastrar</button>
+            <button type="submit">Logar</button>
         </Style.Form>
     );
 }
-    
 
-export default function Register() {
+export default function Login() {
     return (
         <Style.Container>
             <div>Items Extension</div>
-            <RegisterForm />
-            <Link to={"/login"}>Já está cadastrado? Entre agora!</Link>
+            <LoginForm />
+            <Link to={"/register"}>Não possui cadastro? Cadastre-se aqui!</Link>
         </Style.Container>
+
     );
 }

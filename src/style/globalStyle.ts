@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #FFFFFF;
+        background-color: #DCDCDC;
         height: 100vh;
         width: 100vw;
         min-height: 100px;

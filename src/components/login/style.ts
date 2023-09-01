@@ -1,21 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    position: fixed;
-    top: 0;
-    right: 0;
-    left:0;
-    bottom:0;
-    height: 100%;
-    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #777777CC;
-    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
 `
 const Form = styled.form`
-    width: 60%;
+    width: 100%;
     height: 240px;
     background-color: #0000CD;
     color: white;
@@ -25,7 +17,6 @@ const Form = styled.form`
     align-items: flex-end;
     justify-content: space-between;
     padding: 0px 16px 16px 16px;
-    border-radius: 16px;
     > input, textarea, label{
         width:100%;
     }
@@ -35,11 +26,10 @@ const Form = styled.form`
     > textarea{
         height: 80px;
     }
-    button {
+    > button {
         height: 30px;
         width: 70px;
-        margin-top: 8px;
-        margin-left: 8px;
+        margin-top: 4px;
     }
     > label{
         height: 20px;
@@ -47,10 +37,8 @@ const Form = styled.form`
         margin-top: 16px;
     }
 `
-
-
-const Style ={
-    Form,
-    Container
+const Style = {
+    Container,
+    Form
 }
 export default Style;
