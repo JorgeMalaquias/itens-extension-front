@@ -3,6 +3,7 @@ import Main from './components/main';
 import GlobalStyle from './style/globalStyle';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import Register from './components/register';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <GlobalStyle/>
           <Routes>
             <Route path='/' element={<Main/>} />
+            <Route path='/register' element={<Register/>}/>
           </Routes>
         </MemoryRouter>
       </Provider>
